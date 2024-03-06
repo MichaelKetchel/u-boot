@@ -602,6 +602,10 @@ static int dhcp_extended(u8 *e, int message_type, struct in_addr server_ip,
 	*e++  = 42;
 	*cnt += 1;
 #endif
+// #if defined(CONFIG_BOOTP_VENDOR)
+// 	*e++  = 4;
+// 	*cnt += 1;
+// #endif
 	if (IS_ENABLED(CONFIG_BOOTP_PXE_DHCP_OPTION)) {
 		*e++ = 209;	/* PXELINUX Config File */
 		*cnt += 1;
